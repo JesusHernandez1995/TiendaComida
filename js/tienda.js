@@ -8,6 +8,7 @@ window.onload = () => {
 // variable que engloba a todas las imágenes
 var items = document.getElementsByClassName("items");
 var drop_section = document.getElementById("seccion_cesto");
+var titulosection = document.getElementById("seccionTitulo");
 
 // --------------------------------
 //en esta variable estará el contenido de la cesta.
@@ -160,6 +161,39 @@ var aumentar_dropSection = () => {
 var disminuir_dropSection = () => {
   drop_section.style.height = drop_section.clientHeight - 40 + "px";
 };
+
+// Función que mpdifica el tamaño de las imágenes a medida que se va reduciendo la pantalla
+var modifyWidths = () =>{
+  if(window.innerWidth <= 480){
+      for(var j=0; j< items.length; j++){
+          items[j].style.height = items[j].clientWidth/1.2 + 'px';
+      }
+  } else{
+    // De lo contrario, seteamos el ancho y alto a los valores preestablecidos
+    for(var j=0; j< items.length; j++){
+        items[j].style.width = '340px';
+        items[j].style.height = '227px';
+    }
+  }
+}
+
+// Función que coloca centrado el título principal y en 3 lineas
+var updateTitle = () => {
+  if(window.innerWidth <= 530){
+    document.getElementById("titulo-home").innerHTML = "Welcome <br /> to our <br /> grocery store";
+  } else {
+    document.getElementById("titulo-home").innerHTML = "Welcome to our grocery store";
+  }
+}
+
+// Llamamos a estas funciones así no haya existido un redimensionamiento
+modifyWidths();
+updateTitle();
+/* ----------------- Eventos ----------------- */
+window.addEventListener('resize', function(){
+  modifyWidths();
+  updateTitle();
+});
 
 // DRAG AND DROP :
 

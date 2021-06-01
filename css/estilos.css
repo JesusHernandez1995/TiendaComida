@@ -211,6 +211,27 @@ input[type=number] {
     }
 }
 
+@media screen and (max-width: 680px){
+    .titulo-home{
+        font-size: 3.125em;
+    }
+    .inicio{
+        padding: 5px 10px;
+    }
+}
+
+@media screen and (max-width: 530px){
+    .titulo-home{
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .title-products{
+        font-size: 35px;
+    }
+}
+
 @media screen and (max-width: 480px){
     .items{
         width: 40vw;
@@ -229,5 +250,11 @@ input[type=number] {
 
     .comprar_btn i{
         font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 370px){
+    .title-products{
+        font-size: 25px;
     }
 }
